@@ -3,7 +3,7 @@
 Para cada método se calcula el Recall@k y el NDCG@k de cada usuario en test (historial = train + val, F8, máscara C14); después se
 remuestrean usuarios con reemplazo y se obtiene el intervalo del 95 % de la diferencia Two-Tower − baseline. Si el intervalo no
 contiene el 0, la diferencia no se explica por qué usuarios entraron en la muestra (no mide la variabilidad entre semillas, que se
-ve en `resumen_semillas`).
+se mide con varias semillas).
 
 Uso: python -m src.bootstrap --muestra completo --checkpoint .../mejor.pt --device cuda --usuarios-max 20000 --etiqueta s42
 Escribe reports/bootstrap_<etiqueta>.md y .json.

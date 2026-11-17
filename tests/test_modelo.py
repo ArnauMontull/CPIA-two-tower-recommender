@@ -85,7 +85,7 @@ def test_gradiente_llega_a_la_torre_de_items_por_el_historial(datos):
 
 
 def test_recomendar_usuario_nuevo_excluye_lo_valorado(datos):
-    from src.demo_letterboxd import recomendar_usuario
+    from src.recomendar import recomendar_usuario
     torch.manual_seed(0)
     m = DosTorres.desde_config(datos.feats, sintetico.CFG).eval()
     with torch.no_grad():
@@ -99,7 +99,7 @@ def test_recomendar_usuario_nuevo_excluye_lo_valorado(datos):
 
 
 def test_mmr_lambda_1_conserva_el_ranking_y_lambda_baja_separa_gemelos():
-    from src.demo_letterboxd import mmr
+    from src.recomendar import mmr
     V = torch.tensor([[1.0, 0.0], [0.999, 0.0447], [0.0, 1.0], [0.0, -1.0]])
     V = V / V.norm(dim=1, keepdim=True)
     cand, sc = np.array([0, 1, 2, 3]), np.array([0.9, 0.89, 0.6, 0.1])

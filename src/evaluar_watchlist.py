@@ -19,7 +19,7 @@ import torch
 import yaml
 
 from .datos import cargar_features
-from .demo_letterboxd import recomendar_usuario
+from .recomendar import recomendar_usuario
 from .letterboxd.__main__ import crear_buscador
 from .letterboxd.emparejar import Catalogo, emparejar
 from .letterboxd.export import _leer_csv
