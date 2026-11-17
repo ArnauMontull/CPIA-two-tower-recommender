@@ -1,0 +1,8 @@
+data/
+modelos*/
+__pycache__/
+*.pyc
+venv/
+.venv/
+*.pt
+secrets/
